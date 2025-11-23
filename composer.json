@@ -1,0 +1,19 @@
+{
+  "name": "bugfinder/version-upgrade-manager",
+  "description": "Laravel package for BugFinder version upgrade + auto inject menu to generalsettings",
+  "type": "library",
+  "autoload": {
+    "psr-4": {
+      "BugFinder\\VersionUpgrade\\": "src/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "BugFinder\\VersionUpgrade\\VersionUpgradeServiceProvider"
+      ]
+    }
+  },
+  "license": "MIT",
+  "minimum-stability": "stable"
+}
