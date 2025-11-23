@@ -17,6 +17,9 @@ class VersionUpgradeServiceProvider extends ServiceProvider
 
     public function boot()
     {
+		// Load migration
+		$this->loadMigrationsFrom(__DIR__.'/../database/migrations');
+
         // Load routes & views
         $this->loadRoutesFrom(__DIR__ . '/Http/routes.php');
         $this->loadViewsFrom(__DIR__ . '/../resources/views', 'version-upgrade');

@@ -20,9 +20,9 @@
         </div>
 
         <div class="row">
-            <div class="col-lg-3">
-                {{-- include your existing sidebar --}}
-            </div>
+			<div class="col-lg-3">
+				@include('admin.control_panel.components.sidebar', ['settings' => config('generalsettings.settings'), 'suffix' => 'Settings'])
+			</div>
             <div class="col-lg-9" id="basic_control">
                 <div class="card">
                     <div class="card-header">
