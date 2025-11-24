@@ -20,6 +20,35 @@
         </div>
 
         <div class="row">
+			<div class="col-lg-12">
+				<div class="alert alert-soft-dark" role="alert">
+					<div class="d-flex align-items-baseline">
+						<div class="flex-shrink-0">
+							<i class="bi-info-circle me-1"></i>
+						</div>
+
+						<div class="flex-grow-1 ms-2">
+							<h3>Read this Before Upgrading</h3>
+							Do <span class="text-dark fw-semibold">not</span> forget to <span
+								class="text-dark fw-semibold">backup</span>
+							your files & Database and <span class="text-dark fw-semibold">read the changelog</span>
+							before updating
+							your
+							Front copy. If you come across with any problems with Front template during the update and
+							development processes, feel free to contact our support group at <a class="link"
+																								href="https://bugfinder.net/user/support-ticket/new"
+																								target="_blank">https://bugfinder.net/user/support-ticket/new
+								<i class="fas fa-external-link-alt fa-xs"></i></a> and our team will assist you within a
+							short
+							time. If you done <span class="text-dark fw-semibold"> modify or customize </span> any files
+							before, version updates may be affected on your
+							site. For this reason, please contact our support team <a
+								href="https://bugfinder.net/user/support-ticket/new" target="_blank" class="link">here
+								<i class="fal fa-external-link"></i></a>
+						</div>
+					</div>
+				</div>
+			</div>
 			<div class="col-lg-3">
 				@include('admin.control_panel.components.sidebar', ['settings' => config('generalsettings.settings'), 'suffix' => 'Settings'])
 			</div>
