@@ -2,9 +2,20 @@
 
 ## Installation (development)
 
-Place the package code inside your Laravel project (e.g. `packages/BugFinder/version-upgrade`) then add to composer.json autoload (or use path repository).
-
-Run `composer dump-autoload` then add provider if automatic discovery not available.
+- In composer.json place the code after require-dev.
+`
+ "repositories": [
+        {
+            "type": "path",
+            "url": "packages/BugFinder/version-upgrade"
+        }
+    ],
+`
+- In composer.json autoload psr-4 place the code
+`
+"BugFinder\\VersionUpgrade\\": "packages/BugFinder/version-upgrade/src/"
+`
+Run `composer dump-autoload` and `composer require bugfinder/version-upgrade-manager:@dev `.
 
 ## Features
 
