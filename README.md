@@ -2,6 +2,8 @@
 
 ## Installation (development)
 
+Create folder packages -> BugFinder -> version-upgrade in your root directory & place the rest of the code on the folder
+
  In composer.json place the code after require-dev.
 ```
  "repositories": [
