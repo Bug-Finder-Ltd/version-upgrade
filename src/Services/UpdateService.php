@@ -7,6 +7,7 @@ use ZipArchive;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Http;
 
 class UpdateService
 {
@@ -34,17 +35,12 @@ class UpdateService
 
 		$url = $baseUrl . '?' . http_build_query($params);
 
-		$ctx = stream_context_create(['http' => ['timeout' => 10]]);
-		$json = @file_get_contents($url, false, $ctx);
-
-		if (!$json) {
-			return ['status' => 'error', 'message' => 'Cannot contact update server.'];
+		$response = Http::timeout(10)->get($url);
+		if ($response->successful()) {
+			$data = $response->json();
+			return ['status' => 'success', 'current_version' => $currentVersion, 'latest' => $data];
 		}
-
-		$data = json_decode($json, true);
-		if (!$data) return ['status' => 'error', 'message' => 'Invalid response from update server.'];
-
-		return ['status' => 'success', 'current_version' => $currentVersion, 'latest' => $data];
+		return ['status' => 'error', 'message' => $response->json()['message'] ?? 'Server returned error.'];
 	}
 
 	public function downloadAndInstall($currentVersion, $autoBackup = true)
