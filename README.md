@@ -22,4 +22,7 @@ Run `composer dump-autoload` and `composer require bugfinder/version-upgrade-man
 
 ## Installation (production)
 
-Run the command `composer require bugfinder/version-upgrade-manager`
+Run the command <br>
+`Step:1 composer require bugfinder/version-upgrade-manager`<br>
+`Step:2 php artisan migrate`
+
