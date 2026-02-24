@@ -24,5 +24,9 @@ Run `composer dump-autoload` and `composer require bugfinder/version-upgrade-man
 
 Run the command <br>
 `Step:1 composer require bugfinder/version-upgrade-manager`<br>
-`Step:2 php artisan migrate`
+
+`Step:3 php artisan vendor:publish --tag=version-upgrade-config`<br>
+
+`Step:2 php artisan migrate`<br>
+
 
